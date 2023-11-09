@@ -41,7 +41,7 @@ export const faWebFont = localFont({
 export const fa = localFont({
     src: [
         {
-            path: '../../public/FontAwesome.otf'
+            path: '../../public/fonts/FontAwesome.otf'
         }
     ]
 })
@@ -49,16 +49,16 @@ export const fa = localFont({
 export const lg = localFont({
     src: [
         {
-            path: '../../public/lg.eot'
+            path: '../../public/fonts/lg.eot'
         },
         {
-            path: '../../public/lg.svg'
+            path: '../../public/fonts/lg.svg'
         },
         {
-            path: '../../public/lg.ttf'
+            path: '../../public/fonts/lg.ttf'
         },
         {
-            path: '../../public/lg.woff'
+            path: '../../public/fonts/lg.woff'
         }
     ]
 })
@@ -66,16 +66,13 @@ export const lg = localFont({
 export const linearIcons = localFont({
     src: [
         {
-            path: '../../public/Linearicons.eot'
+            path: '../../public/fonts/Linearicons.eot'
         },
         {
-            path: '../../public/Linearicons.svg'
+            path: '../../public/fonts/Linearicons.ttf'
         },
         {
-            path: '../../public/Linearicons.ttf'
-        },
-        {
-            path: '../../public/Linearicons.woff'
+            path: '../../public/fonts/Linearicons.woff'
         }
     ]
 })
@@ -83,19 +80,19 @@ export const linearIcons = localFont({
 export const materialDesignIcons = localFont({
     src: [
         {
-            path: '../../public/materialdesignicons-webfont.eot'
+            path: '../../public/fonts/materialdesignicons-webfont.eot'
         },
         {
-            path: '../../public/materialdesignicons-webfont.svg'
+            path: '../../public/fonts/materialdesignicons-webfont.svg'
         },
         {
-            path: '../../public/materialdesignicons-webfont.ttf'
+            path: '../../public/fonts/materialdesignicons-webfont.ttf'
         },
         {
-            path: '../../public/materialdesignicons-webfont.woff'
+            path: '../../public/fonts/materialdesignicons-webfont.woff'
         },
         {
-            path: '../../public/materialdesignicons-webfont.woff2'
+            path: '../../public/fonts/materialdesignicons-webfont.woff2'
         }
     ]
 })
