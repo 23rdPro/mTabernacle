@@ -1,4 +1,5 @@
 import localFont from '@next/font/local';
+import { Inter } from 'next/font/google';
 
 export const mercury = localFont({
     src: [
@@ -69,6 +70,34 @@ export const linearIcons = localFont({
         },
         {
             path: '../../public/Linearicons.svg'
+        },
+        {
+            path: '../../public/Linearicons.ttf'
+        },
+        {
+            path: '../../public/Linearicons.woff'
         }
     ]
 })
+
+export const materialDesignIcons = localFont({
+    src: [
+        {
+            path: '../../public/materialdesignicons-webfont.eot'
+        },
+        {
+            path: '../../public/materialdesignicons-webfont.svg'
+        },
+        {
+            path: '../../public/materialdesignicons-webfont.ttf'
+        },
+        {
+            path: '../../public/materialdesignicons-webfont.woff'
+        },
+        {
+            path: '../../public/materialdesignicons-webfont.woff2'
+        }
+    ]
+})
+
+export const inter = Inter({ subsets: ['latin'] })
