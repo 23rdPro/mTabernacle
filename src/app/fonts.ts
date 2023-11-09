@@ -69,6 +69,9 @@ export const linearIcons = localFont({
             path: '../../public/fonts/Linearicons.eot'
         },
         {
+            path: '../../public/fonts/Linearicons.svg'
+        },
+        {
             path: '../../public/fonts/Linearicons.ttf'
         },
         {
