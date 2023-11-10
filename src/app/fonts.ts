@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import { Inter } from 'next/font/google';
+import { Inter, Montserrat, Poppins } from 'next/font/google';
 
 export const mercury = localFont({
     src: [
@@ -50,3 +50,7 @@ export const materialDesignIcons = localFont({
 });
 
 export const inter = Inter({ subsets: ['latin'] });
+
+export const montserrat = Montserrat({ subsets: ['latin'], weight: ['300', '400', '700']});
+
+export const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '700', '900']});

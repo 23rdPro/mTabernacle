@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import '@/app/styles/globals.css';
-import { inter } from './fonts';
+import '@/app/styles/bootstrap.css';
+import '@/app/styles/fonts.css';
+import '@/app/styles/style.css';
+import { inter, poppins, montserrat, } from './fonts';
 
 export const metadata: Metadata = {
   title: 'Mercy Tabernacle | Bishop Bankole Jefferson',
