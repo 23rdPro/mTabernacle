@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import '@/app/styles/globals.css';
-import '@/app/styles/bootstrap.css';
-import '@/app/styles/fonts.css';
-import '@/app/styles/style.css';
+import "@/app/styles/globals.css";
 import { inter, poppins, montserrat, } from './fonts';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Mercy Tabernacle | Bishop Bankole Jefferson',
@@ -17,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${poppins.className} ${montserrat.className}`}>
+        {children}
+      </body>
     </html>
   )
 }
