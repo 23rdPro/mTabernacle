@@ -5,7 +5,6 @@ import "@/app/styles/owlcarousel/assets/owl.carousel.min.css";
 import "@/app/styles/tempusdominus/css/tempusdominus-bootstrap-4.min.css";
 import "@/app/styles/bootstrap.min.css";
 import "@/app/styles/style.css"
-import { inter, roboto } from './fonts';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -20,7 +19,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${roboto.className}`}>
+      <head>
+        <link 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+          rel="stylesheet"
+        />
+        <link 
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+          rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap"
+         rel="stylesheet" 
+        />
+      </head>
+      <body >
         {children}
         <Script src="https://code.jquery.com/jquery-3.4.1.min.js" strategy="lazyOnload" />
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" strategy="lazyOnload" />
@@ -32,6 +46,7 @@ export default function RootLayout({
         <Script src="tempusdominus/js/moment.min.js" strategy="lazyOnload" />
         <Script src="tempusdominus/js/moment-timezone.min.js" strategy="lazyOnload" />
         <Script src="tempusdominus/js/tempusdominus-bootstrap-4.min.js" strategy="lazyOnload" />
+        <Script src="main.js" strategy="lazyOnload" />
       </body>
     </html>
   )

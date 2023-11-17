@@ -1,4 +1,3 @@
-import localFont from "next/font/local";
 import { Inter, Montserrat, Poppins, Roboto } from 'next/font/google';
 
 export const inter = Inter({ subsets: ['latin'], weight: ['300', '600'] });
