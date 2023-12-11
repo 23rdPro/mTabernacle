@@ -5,6 +5,7 @@ import "@/app/styles/owlcarousel/assets/owl.carousel.min.css";
 import "@/app/styles/tempusdominus/css/tempusdominus-bootstrap-4.min.css";
 import "@/app/styles/bootstrap.min.css";
 import "@/app/styles/style.css"
+
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -21,9 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-          rel="stylesheet"
-        />
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" 
+          crossOrigin="anonymous" referrerPolicy="no-referrer" />
         <link 
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
           rel="stylesheet"
@@ -36,8 +38,18 @@ export default function RootLayout({
       </head>
       <body >
         {children}
-        <Script src="https://code.jquery.com/jquery-3.4.1.min.js" strategy="lazyOnload" />
-        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" strategy="lazyOnload" />
+        <Script src="https://unpkg.com/default-passive-events" strategy="beforeInteractive" />
+        <Script 
+          src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" 
+          // integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+          strategy="lazyOnload"
+        />
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" 
+                strategy="beforeInteractive" 
+        />
+        <Script src="https://code.jquery.com/jquery-3.4.1.min.js" strategy="beforeInteractive" />
         <Script src="wow/wow.min.js" strategy="lazyOnload" />
         <Script src="easing/easing.min.js" strategy="lazyOnload" />
         <Script src="waypoints/waypoints.min.js" strategy="lazyOnload" />
