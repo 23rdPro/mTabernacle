@@ -5,6 +5,7 @@ import "@/app/styles/owlcarousel/assets/owl.carousel.min.css";
 import "@/app/styles/tempusdominus/css/tempusdominus-bootstrap-4.min.css";
 import "@/app/styles/bootstrap.min.css";
 import "@/app/styles/style.css"
+import "@/app/styles/effects.css";
 
 import Script from 'next/script';
 

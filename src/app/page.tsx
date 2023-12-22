@@ -1,3 +1,5 @@
+'use client';
+import React from "react";
 import Image from "next/image";
 import logo from "../../public/logo.png"
 import carousel1 from "../../public/img/IMG_5435.jpg"
@@ -20,10 +22,17 @@ import {
     mobile 
 } from "./constants";
 import Link from "next/link";
+import Countdown from "react-countdown";
+import { getNextEvent } from "./funcs/setEvent";
 
-export default function Home() {
+const Home = () => {
+    const [date, setDate] = React.useState(new Date())
+    const onCountdownComplete = () => {
+        const doNext = getNextEvent({ today: new Date() })
+        setDate(doNext)
+    }
     const alt = "mercy-tabernacle"
-
+    
     return (
       <>
         <div className="container-fluid bg-light d-none d-lg-block">
@@ -231,7 +240,7 @@ export default function Home() {
             <div className="container">
                 <div className="row g-5">
                     <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <h6 className="text-secondary text-uppercase">NEXT</h6>
+                        <h6 className="text-secondary text-uppercase">Next</h6>
                         <h1 className="mb-4">Upcoming Events</h1>
                         <p className="mb-4">
                             {mission4}
@@ -257,7 +266,15 @@ export default function Home() {
                             </div>
                             <div className="ms-3">
                                 <p className="fs-5 fw-medium mb-2 text-white">Next Event</p>
-                                <h3 className="m-0 text-secondary">00:00:00</h3>
+                                <h3 className="m-0 text-secondary">
+                                    <Countdown 
+                                        date={date.getTime() + 1000}
+                                        precision={3}
+                                        onComplete={onCountdownComplete} 
+                                        // onStop={onCountdownComplete}
+                                        onStart={onCountdownComplete}
+                                    />
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -333,7 +350,7 @@ export default function Home() {
                                 <h4 className="mb-3">New in Christ?</h4>
                                 <p>
                                     Just made a decision for Christ? This is the best decision you will 
-                                    ever make! Now that you are saved, It's time for you to experience 
+                                    ever make! Next that you are saved, It's time for you to experience 
                                     new life on earth in Christ.
                                 </p>
                                 {/* <p className="text-primary fw-medium"><i className="fa fa-check text-success me-2"></i>Quality Service</p>
@@ -549,3 +566,5 @@ export default function Home() {
       </>
   )
 }
+
+export default Home
