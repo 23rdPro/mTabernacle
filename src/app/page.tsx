@@ -299,7 +299,10 @@ const Home = () => {
                                 style={rosarivo.style}
                             >
                                 <p className="m-0 text-white lead">
-                                    New Moon Service <br />Sunday | 8:00 PM
+                                    New Moon Service <br />Sunday | 
+                                    <span className={playfairDisplay.className} style={playfairDisplay.style}>
+                                        8:00 PM
+                                    </span>
                                 </p>
                             </div>
                             
