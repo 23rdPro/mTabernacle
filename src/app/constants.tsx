@@ -20,3 +20,25 @@ export const mission4 = `Our Vision is to Impact, Heal and Liberate mankind from
 to Transform and Conform lives to Christ 
 Image and Likeness, Raising Pacesetters, Role models and Achievers in life
 through Jesus Christ.`
+
+export const days = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday'
+}
+
+export const activities = {
+    0: 'Super Service',
+    3: 'Communion Service',
+    4: 'Transformed Eve',
+    5: 'Healing Service',
+}
+
+export const specialActivities = {
+    0: 'New Moon Service',
+    1: 'Night of Mercy'
+}

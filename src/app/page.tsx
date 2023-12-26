@@ -23,14 +23,34 @@ import {
 } from "./constants";
 import Link from "next/link";
 import Countdown from "react-countdown";
-import { getNextEvent } from "./funcs/setEvent";
+import { playfairDisplay, rosarivo } from "./fonts";
 
 const Home = () => {
-    const [date, setDate] = React.useState(new Date())
+    const [date, setDate] = React.useState(Number)
+    const events: any = {3:18, 4:9, 5:8, 0:8}
+    const keys = Object.keys(events)
+
     const onCountdownComplete = () => {
-        const doNext = getNextEvent({ today: new Date() })
-        setDate(doNext)
+        let event: Array<Date> = []  // one event at a time
+        let current = new Date()
+        const loop = () => {
+            if (!event.length) {
+                if (current.getDate() === 1 && current.getHours() <= 9) {
+                    event = [...event, current]
+                }
+                if (keys.includes(`${current.getDay()}`) &&
+                current.getHours() <= events[current.getDay()]) {
+                    event = [...event, current]
+                }
+                current = new Date(current.setDate(current.getDate() + 1))
+            }
+            if (!event.length) setTimeout(loop, 0)
+        }
+        loop();
+        // if (keys.includes(`${current.getDay()}`) && current.getHours() <= events[current.getDay()] && current.getD)
+        setDate(current.setHours(events[current.getDay()], 0, 0, 0))
     }
+
     const alt = "mercy-tabernacle"
     
     return (
@@ -257,7 +277,7 @@ const Home = () => {
                             <i className="fa fa-check text-success me-3" />
                             Prayers and Communion Sessions.
                         </p>
-                        <div className="bg-primary d-flex align-items-center p-4 mt-5">
+                        <div className="bg-primary d-flex justify-content-lg-around align-items-center p-4 mt-5">
                             <div 
                                 className="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
                                 style={{ "width": "60px", "height": "60px" }}
@@ -268,14 +288,21 @@ const Home = () => {
                                 <p className="fs-5 fw-medium mb-2 text-white">Next Event</p>
                                 <h3 className="m-0 text-secondary">
                                     <Countdown 
-                                        date={date.getTime() + 1000}
+                                        date={date}
                                         precision={3}
                                         onComplete={onCountdownComplete} 
-                                        // onStop={onCountdownComplete}
-                                        onStart={onCountdownComplete}
+                                        key={date}
                                     />
                                 </h3>
                             </div>
+                            <div className={`${rosarivo.className} align-items-center justify-content-start ms-3`}
+                                style={rosarivo.style}
+                            >
+                                <p className="m-0 text-white lead">
+                                    New Moon Service <br />Sunday | 8:00 PM
+                                </p>
+                            </div>
+                            
                         </div>
                     </div>
                     <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
