@@ -1,4 +1,4 @@
-import { Inter, Montserrat, Poppins, Roboto, Rosarivo, Playfair_Display } from 'next/font/google';
+import { Inter, Montserrat, Poppins, Roboto, Rosarivo, Playfair_Display, Gelasio } from 'next/font/google';
 
 export const inter = Inter({ subsets: ['latin'], weight: ['300', '600'] });
 
@@ -22,3 +22,5 @@ export const playfairDisplay = Playfair_Display({
     style: 'normal',
 
 })
+
+export const gelasio = Gelasio({ style: 'italic', subsets: ['latin'], weight: ['700']})

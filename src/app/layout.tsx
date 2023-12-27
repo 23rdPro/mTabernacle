@@ -8,6 +8,8 @@ import "@/app/styles/style.css"
 import "@/app/styles/effects.css";
 
 import Script from 'next/script';
+import Footer from './Components/Footer';
+import Navbar from './Components/Navbar';
 
 export const metadata: Metadata = {
   title: 'Mercy Tabernacle | Bishop Bankole Jefferson',
@@ -38,7 +40,9 @@ export default function RootLayout({
         />
       </head>
       <body >
+        <Navbar />
         {children}
+        <Footer />
         <Script src="https://unpkg.com/default-passive-events" strategy="beforeInteractive" />
         <Script 
           src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" 
