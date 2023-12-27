@@ -34,12 +34,6 @@ const Home = () => {
     const [eventTime, setEventTime] = React.useState('')
     const [eventDay, setEventDay] = React.useState('')
     const events: any = {3:18, 4:9, 5:8, 0:8}
-    const eventNames: any = {
-        3: 'COMMUNION SERVICE',
-        4: 'TRANSFORMED EVE',
-        5: 'HEALING SERVICE',
-        0: 'SUPER SERVICE'
-    }
     const keys = Object.keys(events)
 
     const isFirst = ({ d: current }: { d: Date }
