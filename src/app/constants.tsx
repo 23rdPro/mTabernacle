@@ -3,6 +3,8 @@ export const BISHOP2 = "Bishop Jefferson"
 export const BISHOP3 = "Bankole Jefferson"
 export const BDD = "Bishop Bankole Jefferson DD"
 export const CHURCH = "The Mercy Tabernacle"
+export const CHURCHY = "MERCY TABERNACLE"
+export const WELCOMEPHRASE = "Welcome to Church @"
 export const brief = `
  Bishop Jefferson, a Nigerian with a distinctive gift for teaching the word of Faith, 
  established Mercy Tabernacle more than two decades ago. Since its inception, 
@@ -42,3 +44,5 @@ export const specialActivities = {
     first: 'NEW MOON SERVICE',
     last: 'NIGHT OF MERCY'
 }
+
+export const alt = "mercy-tabernacle"

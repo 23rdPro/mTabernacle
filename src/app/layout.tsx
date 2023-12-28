@@ -10,6 +10,7 @@ import "@/app/styles/effects.css";
 import Script from 'next/script';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
+import Loading from './loading';
 
 export const metadata: Metadata = {
   title: 'Mercy Tabernacle | Bishop Bankole Jefferson',
@@ -40,6 +41,7 @@ export default function RootLayout({
         />
       </head>
       <body >
+        <Loading />
         <Navbar />
         {children}
         <Footer />

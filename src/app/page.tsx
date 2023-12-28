@@ -3,9 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import logo from "../../public/logo.png"
-import carousel1 from "../../public/img/IMG_5435.jpg"
-import carousel2 from "../../public/img/novo19_2.jpg"
-import carousel3 from "../../public/img/novo19_8.jpg"
 import papa2 from "../../public/img/papa2.jpeg"
 import papa4 from "../../public/img/papa4.jpeg"
 import bbf from "../../public/img/ppp.png"
@@ -28,6 +25,7 @@ import Link from "next/link";
 import Countdown from "react-countdown";
 import { gelasio, playfairDisplay, rosarivo } from "./fonts";
 import Welcome from "./Components/Welcome";
+import Carousel from "./Components/Carousel";
 
 const Home = () => {
     const [date, setDate] = React.useState(0)
@@ -102,11 +100,12 @@ const Home = () => {
         setEventTime(eTime)
         setEventName(eName)
     }
-
-    const alt = "mercy-tabernacle"
     
     return (
-        <Welcome />
+        <>
+            <Carousel />
+            <Welcome />
+        </>
   )
 }
 
@@ -116,13 +115,13 @@ export default Home
 //         <div className="container-fluid p-0 mb-5">
 //           <div className="owl-carousel header-carousel position-relative">
 //             <div className="owl-carousel-item position-relative">
-//                 <Image 
-//                 className="img-fluid"
-//                 src={carousel1}
-//                 alt={alt} 
-//                 priority={true} 
-//                 style={{"height": "auto"}} 
-//                 />
+                // <Image 
+                // className="img-fluid"
+                // src={carousel1}
+                // alt={alt} 
+                // priority={true} 
+                // style={{"height": "auto"}} 
+                // />
 //                 <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" 
 //                     style={{ "background": "rgba(0, 0, 0, .4)"}}
 //                 >
