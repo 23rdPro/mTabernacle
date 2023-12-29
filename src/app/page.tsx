@@ -26,6 +26,7 @@ import Countdown from "react-countdown";
 import { gelasio, playfairDisplay, rosarivo } from "./fonts";
 import Welcome from "./Components/Welcome";
 import Carousel from "./Components/Carousel";
+import Service from "./Components/Service";
 
 const Home = () => {
     const [date, setDate] = React.useState(0)
@@ -105,6 +106,7 @@ const Home = () => {
         <>
             <Carousel />
             <Welcome />
+            <Service />
         </>
   )
 }
