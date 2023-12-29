@@ -52,6 +52,10 @@ export const CHILDRENMIN    = 'An inclusive, fun, and engaging children ministry
 export const MENMIN         = 'Empowering men for significant Kingdom impact'
 export const WOMENMIN       = 'Supportive community for women development'
 export const YOUTHMIN       = 'Events, gatherings & educational initiatives'
-export const SPIRIT         = 'Spiritul impartation'
+export const SPIRIT         = 'Spiritual impartation'
 export const TEACH          = "Teachings from God's word"
 export const PANDC          = 'Prayers & Holy communion' 
+export const SERMONTOPIC    = 'Overcoming obstacles & hindrances'
+export const BIBLEQUOTE     = `[John 20:23] "If you forgive the sins of any, they are forgiven them; 
+if you retain the sins of any, they are retained"`
+export const OVERSEER       = 'G.O Mercy Tabernacle'
