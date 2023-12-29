@@ -246,7 +246,7 @@
 
 /*** Facts ***/
 .fact {
-    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../../../public/img/carousel1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../../../public/img/cloud.jpg) center center no-repeat;
     background-size: cover;
 }
 

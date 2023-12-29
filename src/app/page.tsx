@@ -28,83 +28,12 @@ import Welcome from "./Components/Welcome";
 import Carousel from "./Components/Carousel";
 import Service from "./Components/Service";
 import Sermon from "./Components/Sermon";
+import Timer from "./Components/Timer";
 
 const Home = () => {
-    const [date, setDate] = React.useState(0)
-    const [eventName, setEventName] = React.useState('')
-    const [eventTime, setEventTime] = React.useState('')
-    const [eventDay, setEventDay] = React.useState('')
-    const events: any = {3:18, 4:9, 5:8, 0:8}
-    const keys = Object.keys(events)
-
-    const isFirst = ({ d: current }: { d: Date }
-        ) => current.getDate() === 1 && current.getHours() <= 9
-
-    const isLast = ({ d: current }: { d: Date}) => {
-        const month = current.getMonth()
-        const year = current.getFullYear()
-        let tmp = new Date(current.getTime())
-        tmp.setFullYear(year, month+1, 0) //
-        const loop = () => {
-            if (tmp.getDay() !== 5) {
-                tmp = new Date(tmp.setDate(tmp.getDate()-1))
-            }
-            if (tmp.getDay() != 5) setTimeout(loop, 0)
-        }
-        loop();
-        tmp = new Date(tmp.setDate(tmp.getDate()-1))  // edge case
-        return current.getDay() === tmp.getDay()
-    }
-
-    const others  = ({ d: current }: { d: Date }) => ( 
-        (keys.includes(`${current.getDay()}`)) &&
-         (current.getHours() <= events[current.getDay()])
-    )
-
-    const formatAMPM = (d: Date) => {
-        let hour = events[d.getDay()]
-        let minute = '0'
-        let ampm = hour >= 12 ? 'PM' : 'AM'
-        hour = hour % 12
-        hour = hour ? hour : 12  // not 0
-        minute = parseFloat(minute) < 10 ? '0'+minute : minute
-        const strTime = hour+':'+minute+' '+ampm
-        return strTime
-    }
-
-    const onCountdownComplete = () => {
-        let event: Array<Date> = []  // one event at a time
-        let current = new Date()
-        const loop = () => {
-            if (!event.length) {
-                event = (
-                    isFirst({ d: current }) ||
-                    others({ d: current }) || 
-                    isLast({ d: current })) 
-                        ? [...event, current] 
-                        : []
-                if (!event.length) current = new Date(
-                        current.setDate(current.getDate() + 1)
-                    )
-            }
-            if (!event.length) setTimeout(loop, 0)
-        }
-        loop();
-        let tmp1 = new Date(current.getTime())
-        setDate(tmp1.setHours(events[tmp1.getDay()], 0, 0, 0))
-        let eName = ''
-        const day = dayService[current.getDay()][0]
-        const eTime = formatAMPM(current)
-        if (isFirst({ d: current })) eName = specialActivities.first
-        else if (others({ d: current })) eName = dayService[current.getDay()][1].toUpperCase()
-        else if (isLast({ d: current })) eName = specialActivities.last
-        setEventDay(day)
-        setEventTime(eTime)
-        setEventName(eName)
-    }
-    
     return (
         <>
+            <Timer />
             <Carousel />
             <Welcome />
             <Service />
@@ -275,10 +204,7 @@ export default Home
 //                                 <p className="fs-5 fw-medium mb-2 text-white">Next Event</p>
 //                                 <h3 className="m-0 text-secondary">
 //                                     <Countdown 
-//                                         date={date}
-//                                         precision={3}
-//                                         onComplete={onCountdownComplete} 
-//                                         key={date}
+//                                         t
 //                                     />
 //                                 </h3>
 //                             </div>
