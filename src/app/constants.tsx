@@ -49,7 +49,7 @@ export const alt = "mercy-tabernacle"
 
 export const PRAYER         = 'Effectual fervent prayer and intercessions'
 export const CHILDRENMIN    = 'An inclusive, fun, and engaging children ministry'
-export const MENMIN         = 'Empowering men for significant Kingdom impact'
+export const MENMIN         = 'Empowering men for significant kingdom impact'
 export const WOMENMIN       = 'Supportive community for women development'
 export const YOUTHMIN       = 'Events, gatherings & educational initiatives'
 export const SPIRIT         = 'Spiritual impartation'
