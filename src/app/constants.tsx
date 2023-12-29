@@ -46,3 +46,12 @@ export const specialActivities = {
 }
 
 export const alt = "mercy-tabernacle"
+
+export const PRAYER         = 'Effectual fervent prayer and intercessions'
+export const CHILDRENMIN    = 'An inclusive, fun, and engaging children ministry'
+export const MENMIN         = 'Empowering men for significant Kingdom impact'
+export const WOMENMIN       = 'Supportive community for women development'
+export const YOUTHMIN       = 'Events, gatherings & educational initiatives'
+export const SPIRIT         = 'Spiritul impartation'
+export const TEACH          = "Teachings from God's word"
+export const PANDC          = 'Prayers & Holy communion' 
