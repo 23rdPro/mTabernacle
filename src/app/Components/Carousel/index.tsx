@@ -14,7 +14,6 @@ const Carousel = () => {
                         src={carousel1}
                         alt={alt} 
                         priority={true} 
-                        style={{"height": "auto"}} 
                     />
                     <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style={{ "background": "rgba(0, 0, 0, .4)" }}>
                         <div className="container">
@@ -34,8 +33,6 @@ const Carousel = () => {
                         className="img-fluid"
                         src={carousel2}
                         alt={alt} 
-                        // priority={true} 
-                        style={{"height": "auto"}} 
                     />
                     <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style={{ "background": "rgba(0, 0, 0, .4)" }}>
                         <div className="container">
@@ -54,9 +51,7 @@ const Carousel = () => {
                     <Image 
                         className="img-fluid"
                         src={carousel3}
-                        alt={alt} 
-                        // priority={true} 
-                        style={{"height": "auto"}} 
+                        alt={alt}  
                     />
                     <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style={{ "background": "rgba(0, 0, 0, .4)" }}>
                         <div className="container">
