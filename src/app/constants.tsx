@@ -59,3 +59,21 @@ export const SERMONTOPIC    = 'Overcoming obstacles & hindrances'
 export const BIBLEQUOTE     = `[John 20:23] "If you forgive the sins of any, they are forgiven them; 
 if you retain the sins of any, they are retained"`
 export const OVERSEER       = 'G.O Mercy Tabernacle'
+export const ABOUT          = `​​Established in 1996, The Mercy Tabernacle is a non-denominational, multicultural 
+church under the leadership of Bishop Bank Jefferson. Located in the Ogba area of Lagos, our church unites diverse 
+individuals, including those facing challenges, the homeless, and people from various walks of life. Together, 
+we come to worship and engage in ministries that foster community and service. At The Mercy Tabernacle, 
+we consider worship as the starting point and 
+the essence of everything we undertake. Our focus is on directing individuals towards Jesus, 
+motivating them to lead lives shaped by the cross. We achieve this by engaging in worship, fostering discipleship, 
+offering service, and embracing a mission-oriented approach, all in alignment with the teachings and example set by our 
+Lord Jesus.
+`
+export const ABOUTHEAD  = `A diverse and non-denominational church with a history spanning two decades.
+
+
+
+
+
+
+`

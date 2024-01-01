@@ -11,7 +11,7 @@ const Timer = () => {
     const keys = Object.keys(events)
 
     const isFirst = ({ d: current }: { d: Date }
-        ) => current.getDate() === 1 && current.getHours() <= 9
+        ) => current.getDate() === 1 && current.getHours() <= 8
 
     const isLast = ({ d: current }: { d: Date}) => {
         const month = current.getMonth()
@@ -22,20 +22,16 @@ const Timer = () => {
             if (tmp.getDay() !== 5) {
                 tmp = new Date(tmp.setDate(tmp.getDate()-1))
             }
-            if (tmp.getDay() != 5) setTimeout(loop, 0)
+            if (tmp.getDay() !== 5) setTimeout(loop, 0)
+            else return current.getDay() === tmp.getDay() && tmp.getHours() <= 22
         }
-        loop();
-        tmp = new Date(tmp.setDate(tmp.getDate()-1))  // edge case
-        return current.getDay() === tmp.getDay()
+        loop();    
+        return false    
     }
 
-    const others  = ({ d: current }: { d: Date }) => ( 
-        (keys.includes(`${current.getDay()}`)) &&
-         (current.getHours() <= events[current.getDay()])
-    )
+    const others = ({ d: current }: { d: Date }) => keys.includes(`${current.getDay()}`) && current.getDay() <= events[current.getDay()]
 
-    const formatAMPM = (d: Date) => {
-        let hour = events[d.getDay()]
+    const formatAMPM = (hour: number) => {
         let minute = '0'
         let ampm = hour >= 12 ? 'PM' : 'AM'
         hour = hour % 12
@@ -49,32 +45,36 @@ const Timer = () => {
         let event: Array<Date> = []  // one event at a time
         let current = new Date()
         const loop = () => {
-            // console.log(date, 'now')
-            if (!event.length) {
+            if (!(event.length)) {
                 event = (
-                    isFirst({ d: current }) ||
-                    others({ d: current }) || 
-                    isLast({ d: current })) 
-                        ? [...event, current] 
-                        : []
-                if (!event.length) current = new Date(
-                        current.setDate(current.getDate() + 1)
-                    )
+                    isFirst({d:current}) || 
+                    isLast({d:current}) || 
+                    others({d:current})) ? [...event, current] : []
+                if (!(event.length)) (  // set current + 1 
+                    current = new Date(current.setDate(current.getDate()+1))
+                )
             }
-            if (!event.length) setTimeout(loop, 0)
+            if (!(event.length)) setTimeout(loop, 0)
         }
-        loop();
-        const tmp1 = new Date(current.getTime()).setHours(events[current.getDay()], 0, 0,0)
-        setDate(tmp1)
+        loop()
+        current = new Date(current.setDate(current.getDate()+1)) // current + 1
+        let hour = 0
         let eName = ''
-        const day = dayService[current.getDay()][0]
-        const eTime = formatAMPM(current)
-        if (isFirst({ d: current })) eName = specialActivities.first
-        else if (others({ d: current })) eName = dayService[current.getDay()][1].toUpperCase()
-        else if (isLast({ d: current })) eName = specialActivities.last
-        setEventDay(day)
-        setEventTime(eTime)
+        if (isFirst({ d: current })) {
+            hour = 8
+            eName = specialActivities.first
+        } else if (isLast({ d: current })) {
+            hour = 22
+            eName = specialActivities.last
+        } else if (others({ d: current })) {
+            eName = dayService[current.getDay()][1].toUpperCase()
+        }
+        hour = hour ? hour : events[current.getDay()]
+
+        setDate(new Date(current.getTime()).setHours(hour, 0, 0, 0))
+        setEventDay(dayService[current.getDay()][0])
         setEventName(eName)
+        setEventTime(formatAMPM(hour))
     }
 
     return (
