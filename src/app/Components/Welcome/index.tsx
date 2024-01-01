@@ -15,7 +15,7 @@ const Welcome = () => {
                     </div>
                     <div className="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
                         <div className="testimonial-item text-center">
-                            <div className="testimonial-text bg-light text-center p-4 mb-4">
+                            <div className="testimonial-text text-center p-4 mb-4" style={{ "background": "purple"}}>
                                 <Image src={theme} alt={BISHOP} width={320} height={60} className="mb-0" style={{"objectFit": "contain"}} />
                             </div>
                             
