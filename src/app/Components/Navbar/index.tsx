@@ -53,9 +53,8 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav me-auto">
-                        <a href="" className="nav-item nav-link active">Home</a>
+                        <Link href="/" className="nav-item nav-link active">Home</Link>
                         <Link href="/about" className="nav-item nav-link">About</Link>
-                        <a href="" className="nav-item nav-link">Worship</a>
                         <div className="nav-item dropdown">
                             <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Discipleship</a>
                             <div className="dropdown-menu fade-up m-0">
