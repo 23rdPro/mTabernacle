@@ -6,6 +6,7 @@ import Carousel from "./Components/Carousel";
 import Service from "./Components/Service";
 import Sermon from "./Components/Sermon";
 import Timer from "./Components/Timer";
+import Connect from "./Components/Connect";
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Welcome />
             <Service />
             <Sermon />
+            {/* <Connect /> */}
         </>
   )
 }
