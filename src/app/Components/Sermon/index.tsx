@@ -1,6 +1,7 @@
 import Image from "next/image"
 import papa from "../../../../public/img/ppp.png"
 import { BDD, BIBLEQUOTE, BISHOP, CHURCH, OVERSEER, SERMONTOPIC } from "@/app/constants"
+import { Carousel } from 'react-responsive-carousel';
 
 const Sermon = () => {
     return (
@@ -10,8 +11,13 @@ const Sermon = () => {
                     <h6 className="text-secondary text-uppercase">What's new  @</h6>
                     <h1 className="mb-5">{CHURCH}</h1>
                 </div>
-                <div className="owl-carousel testimonial-carousel position-relative wow fadeInUp" data-wow-delay="0.1s">
-
+                <Carousel 
+                    className="owl-carousel testimonial-carousel position-relative wow fadeInUp"
+                    data-wow-delay="0.1s"
+                    autoPlay
+                    infiniteLoop
+                    interval={1500}
+                >
                     <div className="testimonial-item text-center">
                         <div className="testimonial-text bg-light text-center p-4 mb-4">
                             <p className="mb-0">
@@ -93,7 +99,7 @@ const Sermon = () => {
                         <p className="m-0">{OVERSEER}</p>
                     </div>
 
-                </div>
+                </Carousel>
             </div>
         </div>
     )
