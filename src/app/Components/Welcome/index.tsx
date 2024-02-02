@@ -1,6 +1,6 @@
 import Image from "next/image"
 import theme from '../../../../public/theme.png'
-import { BISHOP, CHURCH, mission1, mission2 } from "@/app/constants"
+import { BISHOP, CHURCH, mission1, mission2 } from "@/app/constants/constants"
 import welcome from '../../../../public/welcome.jpg'
 
 const Welcome = () => {
@@ -8,12 +8,12 @@ const Welcome = () => {
         <div className="container-xxl py-5">
             <div className="container">
                 <div className="row g-5">
-                <div className="col-lg-5 pt-4" style={{"minHeight": "500px"}}>
+                <div className="col-lg-6 pt-4" style={{"minHeight": "500px"}}>
                         <div className="position-relative h-100 wow fadeInUp" data-wow-delay="0.5s">
                             <Image src={welcome} alt={BISHOP} className="position-absolute img-fluid w-100 h-100" style={{"objectFit": "cover"}} />
                         </div>
                     </div>
-                    <div className="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                    <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div className="testimonial-item text-center">
                             <div className="testimonial-text text-center p-4 mb-4" style={{ "background": "purple"}}>
                                 <Image src={theme} alt={BISHOP} width={320} height={60} className="mb-0" style={{"objectFit": "contain"}} />

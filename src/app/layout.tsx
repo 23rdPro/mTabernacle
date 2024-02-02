@@ -5,21 +5,24 @@ import "@/app/styles/tempusdominus/css/tempusdominus-bootstrap-4.min.css";
 import "@/app/styles/bootstrap.min.css";
 import "@/app/styles/style.css"
 import "@/app/styles/effects.css";
+import "@/app/styles/carousel.css";
+import "@/app/styles/swiper.carousel.css";
+import "@/app/styles/disciple.blockquote.css";
+import 'swiper/css';
+import 'swiper/swiper-bundle.css';
 import Script from 'next/script';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import Loading from './loading';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Mercy Tabernacle | Bishop Bankole Jefferson',
   description: '',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({children}: {children: React.ReactNode}) {
+  
   return (
     <html lang="en">
       <head>
@@ -38,7 +41,15 @@ export default function RootLayout({
          rel="stylesheet" 
         />
       </head>
-      <body >
+      <body>
+      {/* <div id="fb-root"></div>
+        <Script 
+          async 
+          defer 
+          crossOrigin="anonymous" 
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=2814808405325209&autoLogAppEvents=1" 
+          nonce="YOUR_NONCE"
+        />  */}
         <Loading />
         <Navbar />
         {children}
@@ -49,12 +60,13 @@ export default function RootLayout({
           // integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA=="
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
-          strategy="lazyOnload"
+          strategy="beforeInteractive"
         />
         <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" 
                 strategy="beforeInteractive" 
         />
-        <Script src="https://code.jquery.com/jquery-3.4.1.min.js" strategy="beforeInteractive" />
+        <Script src="https://code.jquery.com/jquery-3.7.1.min.js" strategy="beforeInteractive" />
+        {/* <Script defer src="owlcarousel/owl.carousel.min.js" strategy="afterInteractive" /> */}
         <Script src="wow/wow.min.js" strategy="lazyOnload" />
         <Script src="easing/easing.min.js" strategy="lazyOnload" />
         <Script src="waypoints/waypoints.min.js" strategy="lazyOnload" />
@@ -68,3 +80,4 @@ export default function RootLayout({
     </html>
   )
 }
+

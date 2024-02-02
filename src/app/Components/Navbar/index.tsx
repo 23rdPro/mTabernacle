@@ -1,9 +1,13 @@
-import { alternateAddress, mobile } from "@/app/constants"
+"use client";
+
+import { alternateAddress, mobile } from "@/app/constants/constants"
 import Image from "next/image"
+import { usePathname, useRouter } from 'next/navigation'
 import Link from "next/link"
 import logo from "../../../../public/logo.png"
 
 const Navbar = () => {
+    const pathname = usePathname()
     return (
         <>
         <div className="container-fluid bg-light d-none d-lg-block">
@@ -53,17 +57,18 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav me-auto">
-                        <Link href="/" className="nav-item nav-link active">Home</Link>
-                        <Link href="/about" className="nav-item nav-link">About</Link>
-                        <div className="nav-item dropdown">
+                        <Link href="/" className={`nav-item nav-link ${pathname === '/' ? 'active' : ''}`}>Home</Link>
+                        <Link href="/about" className={`nav-item nav-link ${pathname === '/about' ? 'active' : ''}`}>About</Link>
+                        <Link href="/discipleship" className={`nav-item nav-link ${pathname === '/discipleship' ? 'active' : ''}`}>Discipleship</Link>
+                        {/* <div className="nav-item dropdown">
                             <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Discipleship</a>
                             <div className="dropdown-menu fade-up m-0">
-                                {/* <a href="" className="dropdown-item">Booking</a>
+                                <a href="" className="dropdown-item">Booking</a>
                                 <a href="" className="dropdown-item">Technicians</a>
                                 <a href="" className="dropdown-item">Testimonial</a>
-                                <a href="" className="dropdown-item">404 Page</a> */}
+                                <a href="" className="dropdown-item">404 Page</a>
                             </div>
-                        </div>
+                        </div> */}
                         <a href="" className="nav-item nav-link">Serve</a>
                         <a href="" className="nav-item nav-link">Giving</a>
                     </div>

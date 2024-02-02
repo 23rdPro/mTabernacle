@@ -1,4 +1,7 @@
-import { ABOUT, ABOUTHEAD, mobile } from "../constants"
+import { ABOUT, ABOUTHEAD, mobile } from "../constants/constants"
+import Image from "next/image"
+import about from "../../../public/img/about.jpeg";
+import aboutc from "../../../public/img/aboutc.jpg"
 
 const About = () => {
     return (
@@ -21,8 +24,20 @@ const About = () => {
                     </div>
                     <div className="col-lg-6 pt-4" style={{"minHeight": "500px"}}>
                         <div className="position-relative h-100 wow fadeInUp" data-wow-delay="0.5s">
-                            <img className="position-absolute img-fluid w-100 h-100" src="img/about-1.jpg" style={{"objectFit": "cover", "padding": "0 0 50px 100px"}} alt="" />
-                            <img className="position-absolute start-0 bottom-0 img-fluid bg-white pt-2 pe-2 w-50 h-50" src="img/about-2.jpg" style={{"objectFit": "cover"}} alt="" />
+                            {/* <img className="position-absolute img-fluid w-100 h-100" src="img/about-1.jpg" style={{"objectFit": "cover", "padding": "0 0 50px 100px"}} alt="" /> */}
+                            <Image
+                                className="position-absolute img-fluid w-100 h-100"
+                                style={{ objectFit: "cover", padding: "0 0 50px 100px" }}
+                                alt="about mercy tabernacle"
+                                src={about}
+                            />
+                            <Image 
+                                className="position-absolute start-0 bottom-0 img-fluid bg-white pt-2 pe-2 w-50 h-50"
+                                style={{ objectFit: "cover" }}
+                                alt="about mercy tabernacle"
+                                src={aboutc}
+                            />
+                            {/* <img className="position-absolute start-0 bottom-0 img-fluid bg-white pt-2 pe-2 w-50 h-50" src="img/about-2.jpg" style={{"objectFit": "cover"}} alt="" /> */}
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,43 @@
+.swiper-carousel {
+    /* margin: 7px 0;
+    width: 45px;
+    height: 45px; */
+
+    display: flex;
+
+    /* flex: 0 0 300px; */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: .5s;
+    /* margin: 20px; */
+    /* bottom: 100px; */
+
+    /* color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s; */
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.swiper-carousel .testimonial-text {
+    bottom: -30px;
+    /* transform: translateX(-50%); */
+}
+
+.slide-wrapper-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sermon-box {
+    position: relative;
+    display: flex;
+    
+}
