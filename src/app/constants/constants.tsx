@@ -8,8 +8,11 @@ export const BISHOP2 = "Bishop Jefferson"
 export const BISHOP3 = "Bankole Jefferson"
 export const BDD = "Bishop Bankole Jefferson DD"
 export const CHURCH = "The Mercy Tabernacle"
-export const CHURCHY = "MERCY TABERNACLE"
-export const WELCOMEPHRASE = "Welcome to Church @"
+export const CHURCHY = "THE MERCY TABERNACLE"
+export const WELCOMEPHRASE = "Worship with us @"
+export const REASON = `A nurturing community and spiritually enriching atmosphere, 
+fostering a deeper connection with faith and offering a supportive environment 
+for personal growth and spiritual development.`
 export const brief = `
  Bishop Jefferson, a Nigerian with a distinctive gift for teaching the word of Faith, 
  established Mercy Tabernacle more than two decades ago. Since its inception, 
@@ -66,7 +69,7 @@ if you retain the sins of any, they are retained"`
 export const OVERSEER       = 'G.O Mercy Tabernacle'
 export const ABOUT          = `​​Established in 1996, The Mercy Tabernacle is a non-denominational, multicultural 
 church under the leadership of Bishop Bank Jefferson. Located in the Ogba area of Lagos, our church unites diverse 
-individuals, including those facing challenges, the homeless, and people from various walks of life. Together, 
+individuals, including those facing challenges, and people from various walks of life. Together, 
 we come to worship and engage in ministries that foster community and service. At The Mercy Tabernacle, 
 we consider worship as the starting point and 
 the essence of everything we undertake. Our focus is on directing individuals towards Jesus, 
@@ -80,11 +83,56 @@ export const events: any = {3:18, 4:9, 5:8, 0:8}
 export const keys = Object.keys(events)
 
 export const SERVICES: any = [
-    { name: PRAYER, service: "Prayer Ministry", icon: <i className="fa fa-users fa-2x text-primary" /> },
-    { name: CHILDRENMIN, service: "Children Ministry", icon: <i className="fa fa-child fa-2x text-primary" /> }, 
-    { name: MENMIN, service: "Men Ministry", icon: <i className="fa fa-male fa-2x text-primary" /> }, 
-    { name: WOMENMIN, service: "Women Ministry", icon: <i className="fa fa-female fa-2x text-primary" /> }, 
-    { name: YOUTHMIN, service: "Youth Ministry", icon: <i className="fa fa-users fa-2x text-primary" /> },
+    { 
+        name: PRAYER, 
+        service: "Prayer Ministry", 
+        icon: <i className="fa fa-users fa-2x text-primary" /> ,
+        checks: [
+            "Prayer fellowship",
+            "Outreach missions",
+            "Community engagement",
+        ]
+    },
+    { 
+        name: CHILDRENMIN,
+        service: "Children Ministry", 
+        icon: <i className="fa fa-child fa-2x text-primary" />,
+        checks: [
+            "discipleship empowerment",
+            "Biblical teaching",
+            "Diversity inclusion"
+        ]
+    }, 
+    { 
+        name: MENMIN, 
+        service: "Men Ministry", 
+        icon: <i className="fa fa-male fa-2x text-primary" />,
+        checks: [
+            "Holistic needs",
+            "reflecting mercy",
+            "Diversity inclusion"
+        ] 
+    }, 
+    { 
+        name: WOMENMIN, 
+        service: "Women Ministry", 
+        icon: <i className="fa fa-female fa-2x text-primary" />, 
+        checks: [
+            "vibrant community",
+            "Spiritual growth",
+            "Compassionate outreach"
+        ]
+    }, 
+    { 
+        name: YOUTHMIN, 
+        service: "Youth Ministry", 
+        icon: <i className="fa fa-users fa-2x text-primary" />,
+        checks: [
+            "faith resilience",
+            "Nurturing discipleship",
+            "Reflecting Christ"
+        ]
+    },
 ]
 
 export const slides: any = [
@@ -171,3 +219,42 @@ export const authMessage = {
     ],
     type: "https://developer.twitter.com/en/docs/authentication",
 };
+
+export const SERVE = `At Mercy Tabernacle, under the guidance of Bishop Bankole Jefferson, 
+committed individuals selflessly serve behind the scenes to support the ministry's mission. 
+From administrative tasks to technical support during services, these dedicated volunteers 
+work tirelessly to ensure the smooth operation of the church. Their unwavering dedication 
+reflects a shared passion for spreading the Gospel message and upholding the vision of Mercy 
+Tabernacle.`
+
+export const GIVE = `Your contributions are making a profound difference in our church, 
+local community, and beyond, touching lives far and wide. Reflecting on Apostle Paul's 
+words in 2 Corinthians 9:6-8, we're reminded that those who sow sparingly will reap 
+sparingly, while those who sow generously will reap generously. Your willingness 
+to give generously reflects the abundant and selfless nature of the Body of Christ. 
+Thank you for continuously exemplifying this spirit of generosity and for your 
+unwavering support in helping others experience the boundless love of Christ 
+through your acts of giving.`
+
+export const SERMONS = [
+    {
+        url: 'https://soundcloud.com/mercy-tabernacle/healing-wings-bishop-bankole-jefferson',
+        title: '',
+        description: '',
+    },
+    {
+        url: 'https://soundcloud.com/mercy-tabernacle/healing-wings-bishop-bankole-jefferson',
+        title: '',
+        description: '',
+    },
+    {
+        url: 'https://soundcloud.com/mercy-tabernacle/healing-wings-bishop-bankole-jefferson',
+        title: '',
+        description: '',
+    },
+    {
+        url: 'https://soundcloud.com/mercy-tabernacle/healing-wings-bishop-bankole-jefferson',
+        title: '',
+        description: '',
+    },
+]

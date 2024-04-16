@@ -1,31 +1,48 @@
-import React from "react"
-import Image from "next/image"
-import carousel1 from '../../../../public/img/carousel1.jpg'
-import carousel2 from '../../../../public/img/carousel2.jpg'
-import carousel3 from '../../../../public/img/carousel3.jpg'
-import { CHURCHY, WELCOMEPHRASE, alt } from "@/app/constants/constants"
-import SliderCarousel from "@/app/Components/SliderCarousel"
-// import { Carousel as ReactCarousel } from 'react-responsive-carousel';
+import React from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { EffectFade } from 'swiper/modules';
+import {Swiper} from 'swiper/react';
 
-const Carousel = () => {  
-    // const onClickHandler = (clickHandler: () => void, hasNext: boolean, label: string) => (
-    //     hasNext ? 
-    //         <i 
-    //             className="karousel bi bi-chevron-right" 
-    //             onClick={clickHandler} 
-    //             role="button" 
-    //         />
-    //     :
-    //         <i 
-    //             className="karousel bi bi-chevron-left" 
-    //             onClick={clickHandler} 
-    //             role="button" 
-    //         />
-    // )  
-    return (
-        // <SliderCarousel />
-        <></>
-    )
-}
+const Carousel = ({ 
+  className, 
+  slidesPerView,
+  modules,
+  autoplay,
+  speed,
+  spaceBetween,
+  navigation,
+  pagination,
+  onActiveIndexChange,
+  fadeEffect,
+  effect,
+  ...props 
+}: any) => {
+  return (
+        <Swiper
+        modules={modules}
+        autoplay={autoplay}
+        slidesPerView={slidesPerView}
+        // navigation={{ 
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev' 
+        // }}
+        navigation={navigation}
+        loop
+        speed={speed}
+        className={className}
+        spaceBetween={spaceBetween}
+        pagination={pagination}
+        // centeredSlides
+        onActiveIndexChange={onActiveIndexChange}
+        fadeEffect={fadeEffect}
+        effect={effect}
+      >
+        {props.children}
+        {/* <div className="swiper-button-next" role="button" />
+        <div className="swiper-button-prev" role="button" /> */}
+      </Swiper>
+  )
+};
 
-export default Carousel
+export default Carousel 
+

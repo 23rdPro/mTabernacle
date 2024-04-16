@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
 import "@/app/styles/animate/animate.min.css";
-import "@/app/styles/owlcarousel/assets/owl.carousel.min.css";
+// import "@/app/styles/owlcarousel/assets/owl.carousel.min.css";
 import "@/app/styles/tempusdominus/css/tempusdominus-bootstrap-4.min.css";
 import "@/app/styles/bootstrap.min.css";
 import "@/app/styles/style.css"
 import "@/app/styles/effects.css";
-import "@/app/styles/carousel.css";
-import "@/app/styles/swiper.carousel.css";
 import "@/app/styles/disciple.blockquote.css";
 import 'swiper/css';
-import 'swiper/swiper-bundle.css';
+import 'swiper/css/bundle';
+
 import Script from 'next/script';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
@@ -80,4 +79,5 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     </html>
   )
 }
+
 

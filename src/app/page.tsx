@@ -2,20 +2,20 @@
 
 import React from "react";
 import Welcome from "./Components/Welcome";
-import Carousel from "./Components/Carousel";
-import Service from "./Components/Service";
-import Sermon from "./Components/Sermon";
 import Timer from "./Components/Timer";
+import HomeCarousel from "./Components/Carousel/homeCarousel";
+import ServiceCarousel from "./Components/Carousel/serviceCarousel";
+import SermonCarousel from "./Components/Carousel/sermonCarousel";
 
 const Home = () => {
-    return (
-        <>  
-            {/* <Timer /> */}
-            <Carousel />
-            <Welcome />
-            <Service />
-            <Sermon />
-        </>
+  return (
+    <>  
+      <Timer />
+      <HomeCarousel />
+      <Welcome />
+      <ServiceCarousel />
+      <SermonCarousel />
+    </>
   )
 }
 

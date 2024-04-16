@@ -69,8 +69,8 @@ const Navbar = () => {
                                 <a href="" className="dropdown-item">404 Page</a>
                             </div>
                         </div> */}
-                        <a href="" className="nav-item nav-link">Serve</a>
-                        <a href="" className="nav-item nav-link">Giving</a>
+                        <Link href="/serve" className={`nav-item nav-link ${pathname === '/serve' ? 'active' : ''}`}>Serve</Link>
+                        <Link href="/give" className={`nav-item nav-link ${pathname === '/give' ? 'active' : ''}`}>Give</Link>
                     </div>
                     <div className="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center">
                         <div className="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" 
