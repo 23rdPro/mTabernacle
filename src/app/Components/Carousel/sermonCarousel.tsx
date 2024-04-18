@@ -54,11 +54,6 @@ const sermonCarousel = (CarouselComponent: typeof Carousel) => {
                 <div className="mb-2 hover-effect" role="button" tabIndex={0} onClick={(e) => onClick(e, sermon.url)}>
                   <i className="fa-brands fa-soundcloud fa-2xl text-secondary" />
                   <small className="text-secondary"> Listen on Soundcloud</small>
-                  {/* <small className="fa fa-star text-secondary"></small> */}
-                  {/* <small className="fa fa-star text-secondary"></small>
-                  <small className="fa fa-star text-secondary"></small>
-                  <small className="fa fa-star text-secondary"></small>
-                  <small className="fa fa-star text-secondary"></small> */}
                 </div>
                 <h5 className="mb-1">{BISHOP}</h5>
                 <p className="m-0">{OVERSEER}</p>
