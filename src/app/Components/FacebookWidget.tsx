@@ -2,11 +2,9 @@ import React from 'react';
 import { FacebookProvider, Page } from 'react-facebook';
 import { useMediaQuery } from 'react-responsive';
 
-interface FacebookWidgetProps {
-  isLargeScreen: boolean
-}
-
 const FacebookWidget = () => {
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
+  const isDesktop = useMediaQuery({ minWidth: 992 })
   const isLargeScreen = useMediaQuery({
     query: '(min-width: 1224px)'
   })
