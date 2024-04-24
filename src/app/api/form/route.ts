@@ -2,8 +2,8 @@ import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export async function POST(
-    req: any, 
-    res: any
+    req: NextApiRequest, 
+    res: NextApiResponse
 ) {
   if (req.method === 'POST') {
     const { fullName, email, mobile, message } = req.body;
