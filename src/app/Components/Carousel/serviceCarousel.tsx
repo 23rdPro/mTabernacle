@@ -49,8 +49,8 @@ const serviceCarousel = (CarouselComponent: typeof Carousel) => {
                   </div>
                   <h4 className="mb-3">{service}</h4>
                   <p>{name}</p>
-                  {checks.map((check: any) => (
-                    <p className="text-primary fw-medium" style={{ textTransform: "capitalize"}}>
+                  {checks.map((check: any, index: number) => (
+                    <p className="text-primary fw-medium" style={{ textTransform: "capitalize"}} key={index}>
                       <i className="fa fa-check text-success me-2"></i>
                       {check}
                     </p>
