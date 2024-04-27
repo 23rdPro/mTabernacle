@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import "@/app/styles/animate/animate.min.css";
-// import "@/app/styles/owlcarousel/assets/owl.carousel.min.css";
 import "@/app/styles/tempusdominus/css/tempusdominus-bootstrap-4.min.css";
 import "@/app/styles/bootstrap.min.css";
 import "@/app/styles/style.css"
@@ -25,6 +24,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <head>
+        <meta></meta>
         <link 
           rel="stylesheet" 
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
@@ -41,14 +41,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
       </head>
       <body>
-      {/* <div id="fb-root"></div>
-        <Script 
-          async 
-          defer 
-          crossOrigin="anonymous" 
-          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=2814808405325209&autoLogAppEvents=1" 
-          nonce="YOUR_NONCE"
-        />  */}
         <Loading />
         <Navbar />
         {children}
