@@ -57,7 +57,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 strategy="beforeInteractive" 
         />
         <Script src="https://code.jquery.com/jquery-3.7.1.min.js" strategy="beforeInteractive" />
-        {/* <Script defer src="owlcarousel/owl.carousel.min.js" strategy="afterInteractive" /> */}
         <Script src="wow/wow.min.js" strategy="lazyOnload" />
         <Script src="easing/easing.min.js" strategy="lazyOnload" />
         <Script src="waypoints/waypoints.min.js" strategy="lazyOnload" />
