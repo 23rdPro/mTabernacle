@@ -21,7 +21,7 @@ export const brief = `
 export const address = `100 Ajayi Road Oke-Ira Ogba, Lagos`
 export const alternateAddress = `100 Ajayi Road, Modupe Roundabout Oke Ira Ogba, Lagos`
 export const mobile = "0803 502 3574"
-export const email = "info@mercy-tabernacle.com"
+export const email = "info@mercyworldonline.com"
 export const mission1 = `
 At The Mercy Tabernacle, our vision is to make a profound impact by relieving humanity from poverty 
 and suffering, facilitating healing, and liberating individuals. We aim to transform lives, shaping 
@@ -258,3 +258,5 @@ export const SERMONS = [
         description: '',
     },
 ]
+
+export const facebookLink = 'https://www.facebook.com/mercy.tabernacle.9'
