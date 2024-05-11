@@ -1,4 +1,4 @@
-import { address, email, mobile } from "@/app/constants/constants";
+import { address, email, facebookLink, mobile } from "@/app/constants/constants";
 
 const Footer = () => {
     return (
@@ -11,16 +11,16 @@ const Footer = () => {
                         <p className="mb-2"><i className="fa fa-phone-alt me-3"></i>{mobile}</p>
                         <p className="mb-2"><i className="fa fa-envelope me-3"></i>{email}</p>
                         <div className="d-flex pt-2">
-                            <a className="btn btn-outline-light btn-social" href="">
+                            <a className="btn btn-outline-light btn-social" href={facebookLink}>
                                 <i className="fab fa-twitter" />
                             </a>
-                            <a className="btn btn-outline-light btn-social" href="">
+                            <a className="btn btn-outline-light btn-social" href={facebookLink}>
                                 <i className="fab fa-facebook-f" />
                             </a>
-                            <a className="btn btn-outline-light btn-social" href="">
+                            <a className="btn btn-outline-light btn-social" href={facebookLink}>
                                 <i className="fab fa-youtube" />
                             </a>
-                            <a className="btn btn-outline-light btn-social" href="">
+                            <a className="btn btn-outline-light btn-social" href={facebookLink}>
                                 <i className="fab fa-instagram" />
                             </a>
                         </div>
