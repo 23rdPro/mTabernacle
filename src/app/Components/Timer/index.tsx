@@ -10,7 +10,18 @@ const events = [
   { day: 5, time: { hours: 8, minutes: 0 }, name: 'Healing Service' },  // Friday 8am
 ];
 
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const first = { day: 1, time: { hours: 8 }, name: 'New Moon Service' }
+const last = { day: 5, time: { hours: 22 }, name: 'Night of Mercy' }
+
+const days = [
+  'Sunday', 
+  'Monday', 
+  'Tuesday', 
+  'Wednesday', 
+  'Thursday', 
+  'Friday', 
+  'Saturday'
+]
 
 const isFirst = (date: any) => date.getDate() === 1
 
@@ -21,30 +32,13 @@ const isLast = (date: any) => {
 
 const isFutureEvent = (date: Date, event: any) => {
   const currentDate = new Date();
-  const eventDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(), event?.time.hours, 0, 0);
-  return eventDate > currentDate;  // if true; we can count down to it- eventDate
-};
-
-const getNextEvent = () => {
-  let day = new Date();
-  for (let i=0; i<7; i++){
-    let event = events.find(d => d.day === day.getDay())
-    let canCountdown = isFutureEvent(day, event)
-    if (isFirst(day) && canCountdown) {
-      day.setHours(8, 0, 0)
-      break;
-    }
-    if (event && canCountdown) {
-      day.setHours(event.time.hours, 0, 0)
-      break;
-    }
-    if (isLast(day) && canCountdown) {
-      day.setHours(22, 0, 0)
-      break;
-    }
-    day.setDate(day.getDate() + 1)
-  }
-  return day.getTime()
+  const eventDate = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(), 
+    event?.time.hours, 0, 0
+  );
+  return eventDate > currentDate;  // if true; we can count down to it- 
 };
 
 const Timer = () => {
@@ -52,38 +46,47 @@ const Timer = () => {
   const [eventName, setEventName] = React.useState('')
   const [eventDay, setEventDay] = React.useState('')
   const [eventTime, setEventTime] = React.useState('')
-  React.useEffect(() => {
-    const tmp = new Date(date)
-    let eventName = '';
-    let eventDay = '';
-    let eventTime = '';
-    const updateEventInfo = () => {
-      if (isFirst(tmp)) {
-        eventName = "New Moon Service"
-        eventDay = days[tmp.getDay()]
-        eventTime = '8:00am';
-      } else if (isLast(tmp) && tmp.getHours() < 22 && tmp.getHours() > 7) {
-        eventName = 'Night Of Mercy';
-        eventDay = days[tmp.getDay()];
-        eventTime = '10:00pm';
-      } else {
-        let event = events.find(d => d.day === tmp.getDay());
-        if (event) {
-          eventName = event.name;
-          eventDay = days[tmp.getDay()];
-          eventTime = event.time.hours > 11 ? `${event.time.hours % 12}:00pm` : `${event.time.hours}:00am`;
-        }
+
+  const getNextEvent = () => {
+    let day = new Date();
+    for (let i=0; i<7; i++){
+      let event = events.find(e => e.day === day.getDay() && isFutureEvent(day, e))
+      // console.log(ev)
+      if (isFirst(day) && isFutureEvent(day, first)) {
+        day.setHours(8, 0, 0)
+        setEventName(first.name)
+        setEventDay(days[day.getDay()])
+        setEventTime('8:00am')
+        break;
       }
-    };
-    updateEventInfo();
-    setEventName(eventName);
-    setEventDay(eventDay);
-    setEventTime(eventTime);
-  }, [date])
+      if (event) {
+        console.log(event, 'here')
+        day.setHours(event.time.hours, 0, 0)
+        setEventName(event.name)
+        setEventDay(days[day.getDay()])
+        setEventTime(
+          event.time.hours > 11 ?
+            `${event.time.hours % 12}:00pm` :
+            `${event.time.hours}:00am`
+        );
+        break;
+      }
+      if (isLast(day) && isFutureEvent(day, last)) {
+        day.setHours(22, 0, 0)
+        setEventName(last.name)
+        setEventDay(days[day.getDay()])
+        setEventTime('10:00pm')
+        break;
+      }
+      day.setDate(day.getDate() + 1)
+    }
+    return day.getTime()
+  };
 
   const onCountdownComplete = () => {
     const nextEventDate = getNextEvent();
-    if (nextEventDate !== date) {
+    // console.log()
+    if (nextEventDate > date) {
       setDate(nextEventDate);
     }
   };
