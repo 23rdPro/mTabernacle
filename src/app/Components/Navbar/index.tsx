@@ -1,6 +1,6 @@
 "use client";
 
-import { alternateAddress, mobile } from "@/app/constants/constants"
+import { alternateAddress, email, facebookLink, mobile } from "@/app/constants/constants"
 import Image from "next/image"
 import { usePathname, useRouter } from 'next/navigation'
 import Link from "next/link"
@@ -27,19 +27,19 @@ const Navbar = () => {
                 </div>
                 <div className="h-100 d-inline-flex align-items-center me-4">
                     <i className="far fa-envelope-open text-primary me-2"></i>
-                    <p className="m-0">info@mercy-tabernacle.com</p>
+                    <p className="m-0">{email}</p>
                 </div>
                 <div className="h-100 d-inline-flex align-items-center">
-                    <a className="btn btn-sm-square bg-white text-primary me-1" href="">
+                    <a className="btn btn-sm-square bg-white text-primary me-1" href={facebookLink}>
                         <i className="fab fa-facebook-f"></i>
                     </a>
-                    <a className="btn btn-sm-square bg-white text-primary me-1" href="">
+                    <a className="btn btn-sm-square bg-white text-primary me-1" href={facebookLink}>
                         <i className="fab fa-twitter"></i>
                     </a>
-                    <a className="btn btn-sm-square bg-white text-primary me-1" href="">
+                    <a className="btn btn-sm-square bg-white text-primary me-1" href={facebookLink}>
                         <i className="fab fa-linkedin-in"></i>
                     </a>
-                    <a className="btn btn-sm-square bg-white text-primary me-0" href="">
+                    <a className="btn btn-sm-square bg-white text-primary me-0" href={facebookLink}>
                         <i className="fab fa-instagram"></i>
                     </a>
                 </div>
